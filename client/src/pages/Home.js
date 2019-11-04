@@ -7,7 +7,9 @@ export default class Home extends Component {
     }
     render(){
         return(
-            <h1>placeholder</h1>
+            <Wrapper>
+                
+            </Wrapper>
         )
     }
 }

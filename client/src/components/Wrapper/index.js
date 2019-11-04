@@ -15,7 +15,7 @@ export default class Wrapper extends Component {
                                     <a className="button-primary">VIEW SAVED</a>
                                     <a className="button-primary">LOGOUT</a>
                                 </div>)
-                                : (<a class="button-primary">LOGIN</a>)
+                                : (<a class="button-primary" href="/">LOGIN</a>)
                             }
                         </div>
 

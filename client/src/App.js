@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from './pages/NoMatch';
-import CreateAccountt from './pages/CreateAccount';
+import CreateAccount from './pages/CreateAccount';
 import SavedBooks from './pages/SavedBooks';
 import BookInfo from './pages/BookInfo';
 import Home from './pages/Home';
@@ -20,11 +20,11 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={<Home state={this.stae} />} />
-          <Route exact path="/new" component={CreateAccountt} />
-          <Route exact path="/books" component={SavedBooks} />
-          <Route exact path="/books/:id" component={BookInfo} />
-          <Route component={NoMatch} />
+          <Route exact path="/" render={<Home parentState={this.state} />} />
+          <Route exact path="/new" render={<CreateAccount parentState={this.state} />} />
+          <Route exact path="/books" render={<SavedBooks parentState={this.state} />} />
+          <Route exact path="/books/:id" render={<BookInfo parentState={this.state} />} />
+          <Route render={<NoMatch parentState={this.state} />} />
         </Switch>
       </div>
     );
