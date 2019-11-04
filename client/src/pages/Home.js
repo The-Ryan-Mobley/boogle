@@ -8,8 +8,8 @@ export default class Home extends Component {
     }
     render(){
         return(
-            <Wrapper>
-                <h1>this is the homepage</h1>
+            <Wrapper parentState = {this.props.parentState}>
+                
 
             </Wrapper>
         )

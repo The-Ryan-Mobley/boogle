@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/new" render={()=><CreateAccount parentState={this.state} />} />
           <Route exact path="/books" render={()=><SavedBooks parentState={this.state} />} />
           <Route exact path="/books/:id" render={()=><BookInfo parentState={this.state} />} />
-          <Route render={<NoMatch parentState={()=>this.state} />} />
+          <Route render={()=><NoMatch parentState={this.state} />} />
         </Switch>
       </Router>
     );

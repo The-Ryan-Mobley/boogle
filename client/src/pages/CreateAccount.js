@@ -5,7 +5,7 @@ export default class CreateAccount extends Component {
     render(){
 
         return(
-            <Wrapper>
+            <Wrapper parentState = {this.props.parentState}>
                 <div className="row">
                     <div className="twelve columns main-content">
                         <Input 
