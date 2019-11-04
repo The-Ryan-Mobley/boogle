@@ -35,5 +35,26 @@ module.exports = {
         } catch{
             callback("504");
         }
+    },
+    loginUser = async(username, password, callback) =>{
+        try{
+            let foundUser = await db.Users.find({userName: username});
+            if(foundUser){
+                let passwordConfirm = sha512(password, foundUser.salt);
+                if(passwordConfirm === foundUser.password){
+                    let userData = {
+                        userName: foundUser.userName,
+                        id: foundUser.id
+                    }
+                    callback(foundUser);
+                }else {
+                    callback("401");
+                }
+            } else {
+                callback("504");
+            }
+        } catch {
+            callback("500");
+        }
     }
 }
