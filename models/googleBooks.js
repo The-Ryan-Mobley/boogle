@@ -31,5 +31,5 @@ const bookSchema = new Schema({
         required: "need associated user"
     }
 });
-const googleBooks = mongoose.model("Comments", booksSchema );
+const googleBooks = mongoose.model("googleBooks", bookSchema );
 module.exports = googleBooks;

@@ -10,12 +10,12 @@ export default class Wrapper extends Component {
                         <h1>BOOGLE</h1>
                         <div className="userZone">
                             {this.props.user ?
-                                (<div className="online-div">
+                                <div className="online-div">
                                     <h1>WELCOME {this.props.user}</h1>
                                     <a className="button-primary">VIEW SAVED</a>
                                     <a className="button-primary">LOGOUT</a>
-                                </div>)
-                                : (<a class="button-primary" href="/">LOGIN</a>)
+                                </div>
+                                : <a class="button-primary" href="/">LOGIN</a>
                             }
                         </div>
 
@@ -30,7 +30,6 @@ export default class Wrapper extends Component {
                     </div>
                 </footer>
             </div>
-
         );
     }
 }

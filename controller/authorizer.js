@@ -1,14 +1,14 @@
 const db = require("../models");
 const crypto = require("crypto");
 module.exports = {
-    genRandomString = length => {
+    genRandomString: length => {
         //makes the hash salt
         return crypto
           .randomBytes(Math.ceil(length / 2))
           .toString("hex") /** convert to hexadecimal format */
           .slice(0, length); /** return required number of characters */
       },
-    sha512 = (password, salt) => {
+    sha512: (password, salt) => {
         let hash = crypto.createHmac(
           "sha512",
           salt
@@ -20,7 +20,7 @@ module.exports = {
           passwordHash: value
         };
     },
-    addUser = async(username, password, callback) =>{
+    addUser: async(username, password, callback) =>{
         let Salt = genRandomString(16); /** Gives us salt of length 16 */
         let newUser = {
             username,
@@ -36,7 +36,7 @@ module.exports = {
             callback("504");
         }
     },
-    loginUser = async(username, password, callback) =>{
+    loginUser: async(username, password, callback) =>{
         try{
             let foundUser = await db.Users.find({userName: username});
             if(foundUser){

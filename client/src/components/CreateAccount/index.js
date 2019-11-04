@@ -13,7 +13,6 @@ export default class CreateAccount extends Component {
                 <from>
                 <input type="text" value={this.state.newUsername} name="Username" placeholder="Username" />
                 </from>
-            
             </div>
         )
     }
