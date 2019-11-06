@@ -51,8 +51,6 @@ module.exports = {
                             userName: foundUser.userName,
                             id: foundUser.id
                         }
-                        console.log("line 55 sending");
-                        console.table(userData);
                         res.json({userData});
                     }else {
                         res.sendStatus("401");

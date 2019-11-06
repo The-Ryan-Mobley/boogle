@@ -5,13 +5,22 @@ module.exports = {
         console.log(req.params.terms)
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.terms.toString()}&key=${process.env.GOOGLE_KEY}`)
         .then((result)=>{
-            console.log(result.data.items);
             res.json(result.data.items);
             
-        })
-
-        console.log('this is a placeholder')
-
+        });
+    },
+    saveBook: (req,res)=>{
+        console.table(req.body)
+        db.googleBooks.create(req.body).then((result)=>{
+            console.log("success");
+            res.json(result);
+        });
+    },
+    getSavedBooks: (req, res)=>{
+        db.googleBooks.find({userId: req.params.id}).then(result => {
+            res.json(result);
+        });
     }
+
     
 }

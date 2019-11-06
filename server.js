@@ -17,10 +17,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/boogle");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://"+process.env.MONGO_USER+":"+process.env.MONGO_PASSWORD+"@ds241308.mlab.com:41308/heroku_qk05p71c");
 
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
   
 app.listen(PORT, function() {

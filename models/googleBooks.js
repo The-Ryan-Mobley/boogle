@@ -25,6 +25,12 @@ const bookSchema = new Schema({
         trim: true,
         required: "All books have a title"
     },
+    bookId: {
+        type: String,
+        trim: true,
+        required: "need bookId"
+
+    },
     userId :{
         type: String,
         trim: true,
