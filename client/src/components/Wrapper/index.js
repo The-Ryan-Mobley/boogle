@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router-dom'
 import './style.css';
 
 export default class Wrapper extends Component {
@@ -10,6 +11,9 @@ export default class Wrapper extends Component {
         console.log(this.state);
         console.log(this.state.userId.length);
 
+    }
+    sendToLink = event => {
+        
     }
     render(){
         return(
@@ -27,7 +31,7 @@ export default class Wrapper extends Component {
                                 </div>)
                                 : (<div className="noUser">
                                     <a className="button-primary" href="/login">LOGIN</a>
-                                   <a className="button-primary" href="/new">CREATE ACCOUNT</a>
+                                   <button className="button-primary" href="/new">CREATE ACCOUNT</button>
                                 </div>)
                             }
                         </div>

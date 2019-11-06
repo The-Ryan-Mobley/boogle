@@ -19,8 +19,9 @@ export default class Login extends Component {
                 <Input 
                     value={this.props.parentState.password}
                     onChange={this.props.handleLoginCred}
+                    type="password"
                     name="password"
-                    placeholder="confirm password"
+                    placeholder="password"
                 />
                 <SubmitBtn 
                     disabled={!(this.props.parentState.user && this.props.parentState.password)}
