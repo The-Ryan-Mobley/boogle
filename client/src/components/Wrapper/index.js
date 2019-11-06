@@ -18,14 +18,15 @@ export default class Wrapper extends Component {
                     <div className="header-footer top-content">
                         <h1>BOOGLE</h1>
                         <div className="userZone">
-                            {this.state.userId.length ?
+                            {this.props.parentState.userId.length ?
                                 (<div className="online-div">
-                                    <h1>WELCOME {this.props.user}</h1>
-                                    <a className="button-primary">VIEW SAVED</a>
-                                    <a className="button-primary">LOGOUT</a>
+                                    <h1>WELCOME {this.props.parentState.user}</h1>
+                                    <button className="button-primary">VIEW SAVED</button>
+                                    <button className="button-primary">LOGOUT</button>
+                                    <button className="button-primary" href="/">HOME</button>
                                 </div>)
                                 : (<div className="noUser">
-                                    <a className="button-primary" href="/">LOGIN</a>
+                                    <a className="button-primary" href="/login">LOGIN</a>
                                    <a className="button-primary" href="/new">CREATE ACCOUNT</a>
                                 </div>)
                             }

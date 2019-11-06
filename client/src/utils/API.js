@@ -21,6 +21,6 @@ export default {
       return axios.post("/api/user/new", userInfo);
   },
   login: (userInfo)=>{
-      return axios.get("/api/user/login", userInfo);
+      return axios.get("/api/user/login", {params: userInfo});
   }
 };

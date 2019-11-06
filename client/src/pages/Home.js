@@ -9,7 +9,7 @@ export default class Home extends Component {
     render(){
         return(
             <Wrapper parentState = {this.props.parentState}>
-                
+                <h1>this will be the home page with a searchbar</h1>
 
             </Wrapper>
         )

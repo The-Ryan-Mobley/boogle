@@ -20,41 +20,49 @@ module.exports = {
           passwordHash: value
         };
     },
-    addUser: async(username, password, callback) =>{
-        let Salt = genRandomString(16); /** Gives us salt of length 16 */
+    addUser: async(req,res) =>{
+        console.log("at line 24");
+        let Salt = module.exports.genRandomString(16); /** Gives us salt of length 16 */
+        let hashCode = module.exports.sha512(req.body.password, Salt);
         let newUser = {
-            username,
-            password,
-            passwordData: sha512(this.password, Salt),
-            userSalt: Salt
+            userName: req.body.userName,
+            //password: req.body.password,
+            password: hashCode.passwordHash,
+            salt: hashCode.salt
         };
-        try{
+        
+        console.log(newUser);
+        // try{
             let result = await db.Users.create(newUser);
-            result ? callback(result) : callback("404"); 
+            result ? res.json(result) : res.sendStatus("404"); 
 
-        } catch{
-            callback("504");
-        }
+        // } catch{
+        //     res.sendStatus("504");
+        // }
     },
-    loginUser: async(username, password, callback) =>{
+    loginUser: (req,res) =>{
         try{
-            let foundUser = await db.Users.find({userName: username});
-            if(foundUser){
-                let passwordConfirm = sha512(password, foundUser.salt);
-                if(passwordConfirm === foundUser.password){
-                    let userData = {
-                        userName: foundUser.userName,
-                        id: foundUser.id
+            db.Users.findOne({userName: req.query.userName}, (er, foundUser) => {
+                if(er){console.log(er)}
+                if(foundUser){
+                let passwordConfirm = module.exports.sha512(req.query.password, foundUser.salt);
+                    if(passwordConfirm.passwordHash === foundUser.password){
+                        let userData = {
+                            userName: foundUser.userName,
+                            id: foundUser.id
+                        }
+                        console.log("line 55 sending");
+                        console.table(userData);
+                        res.json({userData});
+                    }else {
+                        res.sendStatus("401");
                     }
-                    callback(foundUser);
-                }else {
-                    callback("401");
+                } else {
+                    res.sendStatus("504");
                 }
-            } else {
-                callback("504");
-            }
+            });
         } catch {
-            callback("500");
+            res.sendStatus("500");
         }
     }
 }
