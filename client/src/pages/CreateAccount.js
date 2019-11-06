@@ -8,7 +8,8 @@ export default class CreateAccount extends Component {
     state = {
         userName: ``,
         password: ``,
-        confirmPassword: ``
+        confirmPassword: ``,
+        errorMsg: ``
     }
     handleInputChange = event =>{
         const { name, value } = event.target;
@@ -74,7 +75,10 @@ export default class CreateAccount extends Component {
                         <SubmitBtn 
                         disabled={!(this.state.userName && this.state.password)}
                         onClick={this.handleFormSubmit}
-                        />
+                        >
+                        Create
+                        </SubmitBtn>
+
 
                     </div>
                 </div>

@@ -4,13 +4,13 @@ import './style.css';
 export function Input(props) {
     return(
         <div className="row">
-            <input className="u-full-width" {...props} />
+            <input className="inputField" {...props} />
         </div> 
     );
 }
 export function SubmitBtn(props) {
     return(
-        <button {...props} className="button-primary">
+        <button {...props} className="button SubmitBtn">
             {props.children}
         </button>
     );

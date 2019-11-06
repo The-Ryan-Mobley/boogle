@@ -7,7 +7,71 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sav{
+  float: right;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.shadowed {
+  box-shadow: 2px 2px 2px 2px rgb(127, 127, 127, 0.5);
+}
+.searchInfo,.logInPage{
+  text-align: center;
+}
+.bodyTitle{
+  text-align: center;
+  font-weight: bolder;
+  color:#333E51;
+}
+.bookInfo{
+  margin: 1% 0;
+  background-color:#e9edf1;
+  padding: 5%;
+  overflow: none;
+
+}
+.bookTitle{
+  margin-bottom: 10%;
+  font-weight: bold;
+  color:#333E51;
+  border-bottom-width: 1%;
+  border-bottom-style: solid;
+  border-bottom-color: #333e5186;
+}
+.bookThumbnail{
+  position: relative;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  float: left;
+  max-width: 12rem;
+  max-height: auto;
+}
+.inputField{
+  width: 50%;
+}
+@media(min-width: 320px) and (max-width: 549px){
+  .bookInfo{
+    overflow:auto; 
+
+  }
+  
+  .sav{
+    float: right;
+    margin: 2%;
+  }
+  .bookTitle{
+    float: inline-start;
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .bookAuthors{
+    float:left;
+  }
+  .bookSummary{
+    float:left;
+
+  }
+  
 }

@@ -5,7 +5,11 @@ import './style.css';
 export default class Wrapper extends Component {
     state = {
         user: this.props.parentState.user,
-        userId: this.props.parentState.userId
+        userId: this.props.parentState.userId,
+        navSave: false,
+        navHome: false,
+        navIn: false,
+        navCreate: false
     }
     componentDidMount = () =>{
         console.log(this.state);
@@ -13,25 +17,35 @@ export default class Wrapper extends Component {
 
     }
     sendToLink = event => {
-        
+        //<Redirect to='/'/>
+        console.log("click");
+        console.log(event.target)
+        const { name} = event.target;
+        this.setState({
+            [name]: true
+        });
     }
     render(){
         return(
             <div className="wrapper">
                 <header>
                     <div className="header-footer top-content">
-                        <h1>BOOGLE</h1>
+                        {this.state.navHome ? (<Redirect to="/" />) : 
+                        (<a onClick={this.sendToLink} name="navHome" className="title headLink">BOOGLE </a>)}
                         <div className="userZone">
                             {this.props.parentState.userId.length ?
                                 (<div className="online-div">
-                                    <h1>WELCOME {this.props.parentState.user}</h1>
-                                    <button className="button-primary">VIEW SAVED</button>
-                                    <button className="button-primary">LOGOUT</button>
-                                    <button className="button-primary" href="/">HOME</button>
+                                    <p className="welcomeTitle">WELCOME {this.props.parentState.user}!</p>
+                                    {this.state.navSave ? (<Redirect to="/books"/>) : 
+                                        (<button onClick={this.sendToLink} name="navSave" className="button navButton" >VIEW SAVED</button>)}
+                                    {this.state.navHome ? (<Redirect to="/"/>) : (<button onClick={this.sendToLink} name="navHome"  className="button navButton">HOME</button>)}
+                                    <a name="navOut" className="button navButton logOut" href="/">LOGOUT</a>
                                 </div>)
                                 : (<div className="noUser">
-                                    <a className="button-primary" href="/login">LOGIN</a>
-                                   <button className="button-primary" href="/new">CREATE ACCOUNT</button>
+                                    {this.state.navIn ? (<Redirect to="/login"/>) :
+                                    (<button onClick={this.sendToLink} name="navIn" className="button navButton">LOGIN</button>)}
+                                   {this.state.navCreate ? (<Redirect to="/new"/>) : 
+                                   (<button onClick={this.sendToLink} name="navCreate" className="button navButton">CREATE ACCOUNT</button>)}
                                 </div>)
                             }
                         </div>
@@ -43,7 +57,7 @@ export default class Wrapper extends Component {
                 </div>
                 <footer>
                     <div className="header-footer bottom-content">
-                        <h1>BOTTOM TEXT</h1>
+                        <p className="title">created by Ryan Mobley</p>
                     </div>
                 </footer>
             </div>

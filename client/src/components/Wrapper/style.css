@@ -1,0 +1,50 @@
+.header-footer{
+    background-color:#333E51;
+
+}
+.welcomeTitle{
+    margin-right: 2%;
+    float: right;
+    color: #F4F3EA;
+    font-weight: bold;
+  }
+.navButton{
+    margin: 0 0.5% 1% 0.5%;
+    background-color:#D2AC2C;
+    color: #F4F3EA;
+}
+.headLink{
+    font-size: 7rem;
+}
+.title{
+    font-weight: bolder;
+    color: #F4F3EA;
+    
+}
+header{
+    border-bottom-width: 1%;
+    border-bottom-style: solid;
+    border-color:#CAD0D7;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-width: 1%;
+    border-top-style: solid;
+    border-color:#CAD0D7;
+}
+.bottom-content{
+    padding: 0.5%;
+
+}
+@media(min-width: 320px) and (max-width: 549px){
+    .navButton{
+        padding:1%;
+        font-size: 0.8rem;
+    }
+    .welcomeTitle{
+        float: none;
+        text-align: center;
+    }
+}

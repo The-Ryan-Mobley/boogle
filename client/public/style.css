@@ -1,3 +1,11 @@
+html{
+    overflow-x:none;
+    background-color:#D2AC2C;
+}
+html,body{
+    height: 100%;
+    margin: 0;
+}
 .container{
     width: 100%;
 }

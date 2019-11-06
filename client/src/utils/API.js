@@ -10,12 +10,12 @@ export default {
     return axios.get("/api/books/" + id);
   },
   // Deletes the book with the given id
-  deleteBook: (id)=> {
-    return axios.delete("/api/books/" + id);
+  getSavedBooks: (id)=> {
+    return axios.get("/api/books/save/" + id);
   },
   // Saves a book to the database
   saveBook: (bookData)=> {
-    return axios.post("/api/books", bookData);
+    return axios.post("/api/books/save", bookData);
   },
   newUser: (userInfo)=>{
       return axios.post("/api/user/new", userInfo);
