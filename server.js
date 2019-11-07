@@ -17,8 +17,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-mongoose.connect(
-  "mongodb://"+process.env.MONGO_USER.toString()+":"+process.env.MONGO_PASSWORD.toString()+"@ds241268.mlab.com:41268/heroku_l8kbbg0s");
+mongoose.connect(process.env.MONGODB_URI || 
+  "mongodb://heroku_l8kbbg0s:gtblbfeb6eprc1k9pev5fcnunt@ds241268.mlab.com:41268/heroku_l8kbbg0s");
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
