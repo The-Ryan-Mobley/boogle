@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
-import NoMatch from './pages/NoMatch';
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import SavedBooks from './pages/SavedBooks';
-import BookInfo from './pages/BookInfo';
 import Home from './pages/Home';
 import API from './utils/API';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -73,8 +70,6 @@ class App extends Component {
             />}
           </Route>
           <Route exact path="/books" render={()=><SavedBooks parentState={this.state} />} />
-          <Route exact path="/books/:id" render={()=><BookInfo parentState={this.state} />} />
-          <Route render={()=><NoMatch parentState={this.state} />} />
         </Switch>
       </Router>
     );
