@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import Wrapper from '../components/Wrapper';
 import {Input, SubmitBtn} from '../components/Form';
 import API from '../utils/API';
