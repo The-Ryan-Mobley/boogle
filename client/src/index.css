@@ -25,6 +25,9 @@ code {
   font-weight: bolder;
   color:#333E51;
 }
+.main-content{
+  text-align: center;
+}
 .bookInfo{
   margin: 1% 0;
   background-color:#e9edf1;

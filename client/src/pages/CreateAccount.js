@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Redirect } from "react-router-dom";
 import Wrapper from '../components/Wrapper';
 import {Input, SubmitBtn} from '../components/Form';
 import API from '../utils/API';
@@ -54,6 +54,7 @@ export default class CreateAccount extends Component {
             <Wrapper parentState = {this.props.parentState}>
                 <div className="row">
                     <div className="twelve columns main-content">
+                        <h2 className="bodyTitle">Enter a Username and password</h2>
                         <Input 
                         value={this.state.userName}
                         onChange={this.handleInputChange}
