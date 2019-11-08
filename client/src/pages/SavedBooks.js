@@ -18,7 +18,7 @@ export default class SavedBooks extends Component {
                     noDupes.push(i);
                 }
             });
-            this.setState({noDupes});
+            this.setState({userBooks: noDupes});
         })
     }
     render(){
