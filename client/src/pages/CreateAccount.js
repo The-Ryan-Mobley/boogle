@@ -23,7 +23,7 @@ export default class CreateAccount extends Component {
         if (this.state.userName && this.state.password) {
             this.createUser();
         } else {
-            console.log("please fill out the forms completely");
+            this.setState({errorMessage: `please fill out the forms completely`});
         }
     }
     createUser = async() =>{
@@ -34,11 +34,10 @@ export default class CreateAccount extends Component {
         if(this.state.confirmPassword === this.state.password){
             try{
                 let result = await API.newUser(userInfo);
-                console.log(result);
                 if(result !== "404") {
                     this.setState({sendHome: true});
                 } else {
-                    console.log("failed to send to db");
+                    this.setState({errorMessage: `something went wrong please try again`});
                 }
             } catch{
                 this.setState({errorMessage: `something went wrong please try again`});
@@ -63,12 +62,14 @@ export default class CreateAccount extends Component {
                         <Input 
                         value={this.state.password}
                         onChange={this.handleInputChange}
+                        type="password"
                         name="password"
                         placeholder="password"
                         />
                         <Input 
                         value={this.state.confirmPassword}
                         onChange={this.handleInputChange}
+                        type="password"
                         name="confirmPassword"
                         placeholder="confirm password"
                         />

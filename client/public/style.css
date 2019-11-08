@@ -9,3 +9,7 @@ html,body{
 .container{
     width: 100%;
 }
+.error{
+    font-weight: bold;
+    color: #ff0101;
+  }
