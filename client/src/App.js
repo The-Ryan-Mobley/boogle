@@ -17,7 +17,8 @@ class App extends Component {
       user: ``,
       password: ``,
       userId: ``,
-      loggedIn: false
+      loggedIn: false,
+      errorMessage: ``
     }
   }
   
@@ -30,22 +31,19 @@ class App extends Component {
       userName: this.state.user,
       password: this.state.password
     }
-    console.table(userInfo);
 
     let result = await API.login(userInfo);
-    console.log(result);
+
     result ? 
       this.setState({
         user: result.data.userData.userName,
         password: ``,
         userId: result.data.userData.id,
-        loggedIn: true
+        loggedIn: true,
+        errorMessage: ``
       }) 
       
-      : console.log("invalid login");
-      console.log(this.state);
-
-
+      : this.setState({errorMessage: `invalid login`});
   }
   handleLoginCred(event){
     const { name, value } = event.target;
