@@ -31,12 +31,12 @@ code {
 .bookInfo{
   margin: 1% 0;
   background-color:#e9edf1;
-  padding: 5%;
+  padding: 3%;
   overflow: none;
 
 }
 .bookTitle{
-  margin-bottom: 10%;
+  margin-bottom: 1%;
   font-weight: bold;
   color:#333E51;
   border-bottom-width: 1%;
