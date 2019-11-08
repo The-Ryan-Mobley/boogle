@@ -34,7 +34,7 @@ export default class Login extends Component {
                             >
                             Login
                             </SubmitBtn>
-                            {this.parentState.errorMessage.length ? 
+                            {this.props.parentState.errorMessage.length ? 
                                 (<p className="error">this.parentState.errorMessage</p>):
                                 (<p></p>)}
                         </div>
