@@ -9,7 +9,6 @@ export default class SavedBooks extends Component {
     }
     componentDidMount() {
         API.getSavedBooks(this.props.parentState.userId).then(re => {
-            console.log(re);
             let userBooks = re.data;
             this.setState({userBooks});
         })

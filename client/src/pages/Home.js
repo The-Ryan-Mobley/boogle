@@ -16,14 +16,11 @@ export default class Home extends Component {
     }
     handleFormSubmit = event =>{
         event.preventDefault();
-        console.log(this.state.terms)
         API.getBooks(this.state.terms)
         .then((re)=>{
             if(re.data){
-                console.log(re);
                 let bookResults = [];
                 re.data.forEach(i => {
-                    console.log("tick");
                     let imageInfo = "";
                     i.volumeInfo.imageLinks ? imageInfo = i.volumeInfo.imageLinks.thumbnail 
                     : imageInfo = "no image"
@@ -33,7 +30,7 @@ export default class Home extends Component {
                         image: imageInfo,
                         link: i.volumeInfo.canonicalVolumeLink,
                         title: i.volumeInfo.title,
-                        id: i.id
+                        id: i.id,
                     }
                 bookResults.push(obj);
             });
@@ -56,9 +53,7 @@ export default class Home extends Component {
             bookId: bookArr[0].id,
             userId: this.props.parentState.userId
         }
-        console.table(bookData);
         API.saveBook(bookData).then(re =>{
-            console.log(re)
 
         });
 

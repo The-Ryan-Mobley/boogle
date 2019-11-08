@@ -17,9 +17,6 @@ export default class Wrapper extends Component {
 
     }
     sendToLink = event => {
-        //<Redirect to='/'/>
-        console.log("click");
-        console.log(event.target)
         const { name} = event.target;
         this.setState({
             [name]: true

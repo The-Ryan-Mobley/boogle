@@ -9,7 +9,8 @@ export default class CreateAccount extends Component {
         userName: ``,
         password: ``,
         confirmPassword: ``,
-        errorMsg: ``
+        sendHome: false,
+        errorMessage: ``
     }
     handleInputChange = event =>{
         const { name, value } = event.target;
@@ -30,22 +31,20 @@ export default class CreateAccount extends Component {
             userName: this.state.userName,
             password: this.state.password
         }
-        console.log(userInfo);
-        console.log(this.state.confirmPassword);
         if(this.state.confirmPassword === this.state.password){
             try{
                 let result = await API.newUser(userInfo);
                 console.log(result);
                 if(result !== "404") {
-                    return <Redirect to='/' />
+                    this.setState({sendHome: true});
                 } else {
                     console.log("failed to send to db");
                 }
             } catch{
-                console.log("failed to query");
+                this.setState({errorMessage: `something went wrong please try again`});
             }
         } else {
-            console.log("failed to create passwords dont match");
+            this.setState({errorMessage: `passwords must match`});
         }
     }
 
@@ -73,12 +72,15 @@ export default class CreateAccount extends Component {
                         name="confirmPassword"
                         placeholder="confirm password"
                         />
-                        <SubmitBtn 
+                        {this.state.sendHome ? (<Redirect to="/"/>) :
+                        (<SubmitBtn 
                         disabled={!(this.state.userName && this.state.password)}
                         onClick={this.handleFormSubmit}
                         >
                         Create
-                        </SubmitBtn>
+                        </SubmitBtn>)}
+                        {this.state.errorMessage.length ? 
+                        (<p className="error">{this.state.errorMessage}</p>) : (<p></p>)}
 
 
                     </div>
