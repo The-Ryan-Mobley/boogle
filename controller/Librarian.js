@@ -7,7 +7,7 @@ module.exports = {
         .then((result)=>{
             res.json(result.data.items);
             
-        });
+        }).catch(er => console.log(er));
     },
     saveBook: (req,res)=>{
         console.table(req.body)
