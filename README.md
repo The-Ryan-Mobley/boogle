@@ -3,7 +3,7 @@ https://limitless-garden-74095.herokuapp.com/
 ## Table of Contents
  1. [Intro](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#Intro)
  2. [Homepage](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#Homepage)
- 3. [Create Account](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#Create Account)
+ 3. [Create Account](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#CreateAccount)
  4. [Login](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#Intro)
 
 ## Intro
@@ -15,7 +15,7 @@ https://limitless-garden-74095.herokuapp.com/
   This is the main navigation page. From here users can search for books. If the user creates an account and login from the navigation 
   buttons at the top of the page; they can save books and view them from the saved books button. 
 
-## Create Account
+## CreateAccount
   If the user wants to make an account so they can save books; simply fill out the standard forms: username, password, and a repeated 
   password for confirmation. Once this is done they will be redirected to the homepage.
 
