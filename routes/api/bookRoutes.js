@@ -1,6 +1,6 @@
 const axios = require("axios");
 const router = require("express").Router();
-const librarian = require("../../controller/librarian");
+const librarian = require("../../controller/Librarian");
 
 
 router
