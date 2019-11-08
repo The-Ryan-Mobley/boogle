@@ -13,8 +13,8 @@ export default class SavedBooks extends Component {
             let idList =[];
             let noDupes = [];
             userBooks.forEach(i => {
-                if(idList.indexOf(i.userId) === -1){
-                    idList.push(i.userId);
+                if(idList.indexOf(i.bookId) === -1){
+                    idList.push(i.bookId);
                     noDupes.push(i);
                 }
             });

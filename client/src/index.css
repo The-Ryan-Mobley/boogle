@@ -57,6 +57,9 @@ code {
 .logInPage{
   text-align: center;
 }
+.bookSummary{
+  padding-bottom: 5%;
+}
 @media(min-width: 320px) and (max-width: 549px){
   .bookInfo{
     overflow:auto; 
