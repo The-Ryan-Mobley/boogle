@@ -16,12 +16,12 @@ app.use(routes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+// app.get('*',(req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+// });
 
 mongoose.connect(process.env.MONGODB_URI || 
-  "mongodb://localhost/boogle");
+  "mongodb://heroku_m9d6xwxs:7619ngv0v33ig70896ru5fdg4i@ds241288.mlab.com:41288/heroku_m9d6xwxs");
 
 // app.get("*", function(req, res) {
 //     res.sendFile(path.join(__dirname, "./client", "build"));
