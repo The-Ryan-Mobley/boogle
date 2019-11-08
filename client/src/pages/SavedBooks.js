@@ -10,7 +10,15 @@ export default class SavedBooks extends Component {
     componentDidMount() {
         API.getSavedBooks(this.props.parentState.userId).then(re => {
             let userBooks = re.data;
-            this.setState({userBooks});
+            let idList =[];
+            let noDupes = [];
+            userBooks.forEach(i => {
+                if(idList.indexOf(i.userId) === -1){
+                    idList.push(i.userId);
+                    noDupes.push(i);
+                }
+            });
+            this.setState({noDupes});
         })
     }
     render(){

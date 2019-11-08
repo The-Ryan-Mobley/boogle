@@ -11,9 +11,7 @@ module.exports = {
         }).catch(er => console.log(er));
     },
     saveBook: (req,res)=>{
-        console.table(req.body)
         db.googleBooks.create(req.body).then((result)=>{
-            console.log("success");
             res.json(result);
         });
     },
