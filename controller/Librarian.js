@@ -2,7 +2,8 @@ const db = require("../models");
 const axios = require("axios")
 module.exports = {
     getBooks: (req,res)=> {
-        console.log(req.params.terms)
+        console.log(req.params.terms);
+        console.log("********************************************************");
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.terms.toString()}&key=${process.env.GOOGLE_KEY}`)
         .then((result)=>{
             res.json(result.data.items);
