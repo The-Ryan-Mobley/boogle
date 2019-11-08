@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI ||
   "mongodb://heroku_m9d6xwxs:7619ngv0v33ig70896ru5fdg4i@ds241288.mlab.com:41288/heroku_m9d6xwxs");
 
 // app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "./client", "build"));
+//     res.sendFile(path.join(__dirname, "./client", "build")); :)
 //   });
   
 app.listen(PORT, function() {
