@@ -7,7 +7,7 @@ https://limitless-garden-74095.herokuapp.com/
  4. [Login](https://github.com/The-Ryan-Mobley/boogle/new/master/README.md#Intro)
 
 ## Intro
-  boogle is a wepsite where you can search for books and save them in a collection to keep track of later. Boogle is very useful for 
+  boogle is a website where you can search for books and save them in a collection to keep track of later. Boogle is very useful for 
   keeping track of multiple books for things like research work. This is a full-stack MERN (mongodb, express, react, node) app that 
   uses the google books api to allow users to curate a collection of books in a mongo database.
   
